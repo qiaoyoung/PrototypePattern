@@ -94,7 +94,7 @@ NSLog(@"克隆对象<%p>的name=%@",copyUser,copyUser.name);
 ####  A：错！！！  
 **（因为在 `copyWithZone:` 方法中实现了 `allocWithZone:` ,会为拷贝的对象分配一个新的内存地址，从而生成了一个全新的对象返回出去）**
 
-**如果我们将 `copyWithZone:` 方法改为如下实现：**
+**如果我们将 `copyWithZone:` 方法改为如下实现：返回的还是同一对象**
 ```
 // copy修饰符的实现方法是 copyWithZone：
 - (id)copyWithZone:(NSZone *)zone {
@@ -109,7 +109,7 @@ return  copyUser;
 ***
 
 #### 深拷贝 / 浅拷贝 这里就不再阐述了，大家可以通过下面的文章结合学习~
-[《Effective Objective-C 2.0》 第二十二条：理解 NSCopying 协议]()
+[《Effective Objective-C 2.0》 第二十二条：理解 NSCopying 协议]()          
 [iOS 集合的深复制与浅复制](https://www.zybuluo.com/MicroCai/note/50592)
 
 千里之行，始于足下。
